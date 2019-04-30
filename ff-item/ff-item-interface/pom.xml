@@ -12,5 +12,12 @@
     <groupId>com.xuhua</groupId>
     <artifactId>ff-item-interface</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.xuhua</groupId>
+            <artifactId>ff-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
