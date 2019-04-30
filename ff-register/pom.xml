@@ -10,12 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.xuhua</groupId>
-    <artifactId>ff-item</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>ff-item-interface</module>
-        <module>ff-item-service</module>
-    </modules>
+    <artifactId>ff-register</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

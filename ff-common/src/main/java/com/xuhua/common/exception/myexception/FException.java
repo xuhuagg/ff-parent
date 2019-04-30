@@ -13,8 +13,8 @@ public class FException  extends RuntimeException {
 
     private ExceptionEnum exceptionEnum;
 
-    public FException(String message, ExceptionEnum exceptionEnum) {
-        super(message);
+    public FException(ExceptionEnum exceptionEnum) {
+        super(exceptionEnum.message());
         this.exceptionEnum = exceptionEnum;
     }
 }

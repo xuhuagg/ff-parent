@@ -15,7 +15,7 @@ import lombok.ToString;
 @ToString
 public enum ExceptionEnum {
 
-    BRAND_CREATE_FAILED(500, "新增品牌失败"),
+    CATEGORY_NOT_FOUND(204, "分类不存在"),
 
 
     ;

@@ -8,6 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ff-common" />
         <module name="ff-item-interface" />
+        <module name="ff-item-service" />
+        <module name="ff-register" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
