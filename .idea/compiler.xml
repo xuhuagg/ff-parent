@@ -6,8 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dev-ff" />
+        <module name="ff-common" />
+        <module name="ff-item-interface" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dev-ff-category" target="1.7" />
+      <module name="dev-ff-category-interface" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
