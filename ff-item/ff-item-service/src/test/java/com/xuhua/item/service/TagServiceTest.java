@@ -1,6 +1,7 @@
 package com.xuhua.item.service;
 
-import com.xuhua.item.pojo.Category;
+import com.xuhua.common.vo.PageResult;
+import com.xuhua.item.pojo.Tag;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,24 +13,32 @@ import java.util.List;
 /**
  * @Author: XuHua
  * @Description:
- * @Date: Created in 14:47 2019/4/30
+ * @Date: Created in 16:25 2019/4/30
  */
+
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class CategoryServiceTest {
+public class TagServiceTest {
 
     @Autowired
-    private CategoryService categoryService;
+    private TagService service;
 
     @Test
-    public void queryCategoryByPid() {
-        Category category = categoryService.queryCategoryByPid(325401L);
-        System.out.println(category);
+    public void queryById() {
+        Tag tag = service.queryById(1425L);
+        System.out.println(tag);
     }
 
     @Test
     public void findAll(){
-        List<Category> all = categoryService.findAll();
+        List<Tag> all = service.findAll();
         System.out.println(all);
     }
+
+    @Test
+    public void findByPage(){
+        PageResult<Tag> result = service.queryTagByPage(2, 5, "");
+        System.out.println(result.getTotal());
+    }
+
 }

@@ -16,7 +16,7 @@ import lombok.ToString;
 public enum ExceptionEnum {
 
     CATEGORY_NOT_FOUND(204, "分类不存在"),
-
+    TAG_NOT_FOUND(204,"标签不存在"),
 
     ;
     int value;

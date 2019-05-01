@@ -6,6 +6,9 @@ import com.xuhua.item.mapper.CategoryMapper;
 import com.xuhua.item.pojo.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+
+import java.util.List;
 
 /**
  * @Author: XuHua
@@ -25,8 +28,16 @@ public class CategoryService {
         if (select==null){
             throw new FException(ExceptionEnum.CATEGORY_NOT_FOUND);
         }
-
         return select;
+    }
+
+    public List<Category> findAll(){
+        List<Category> categories = categoryMapper.selectAll();
+        if(CollectionUtils.isEmpty(categories)){
+            throw new FException(ExceptionEnum.CATEGORY_NOT_FOUND);
+        }
+
+        return categories;
     }
 
 }

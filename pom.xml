@@ -12,6 +12,7 @@
         <module>ff-item</module>
         <module>ff-common</module>
         <module>ff-register</module>
+        <module>ff-api</module>
     </modules>
 
     <!--引入springboot2.0.4起步依赖-->

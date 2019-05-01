@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Author: XuHua
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class BasicExceptionHandler {
 
     @ExceptionHandler(FException.class)
+    @ResponseBody
     public ResponseEntity<ExceptionResult> handleException(FException e) {
         return ResponseEntity.status(e.getExceptionEnum().value())
                 .body(new ExceptionResult(e.getExceptionEnum()));
