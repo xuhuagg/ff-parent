@@ -19,6 +19,6 @@ public class Tag {
     @KeySql(useGeneratedKeys = true)
     private Long id;
     private String name;
-    private String categoryId;
+    private Long categoryId;
     private int sort;
 }

@@ -41,4 +41,9 @@ public class TagServiceTest {
         System.out.println(result.getTotal());
     }
 
+    @Test
+    public void queryByCategoryId() {
+        List<Tag> tags = service.queryByCategoryId(325401L);
+        System.out.println(tags.size());
+    }
 }

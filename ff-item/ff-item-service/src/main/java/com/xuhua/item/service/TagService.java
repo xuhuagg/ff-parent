@@ -27,12 +27,12 @@ public class TagService {
     @Autowired
     private TagMapper tagMapper;
 
-    public Tag queryById(Long id){
+    public Tag queryById(Long id) {
         Tag tag = tagMapper.selectByPrimaryKey(id);
         return tag;
     }
 
-    public List<Tag> findAll(){
+    public List<Tag> findAll() {
         List<Tag> tags = tagMapper.selectAll();
         return tags;
     }
@@ -43,17 +43,25 @@ public class TagService {
         //创建过滤条件
         Example example = new Example(Tag.class);
         //创建criteria
-        if(StringUtils.isNotBlank(key)){
-            example.createCriteria().andLike("name","%"+key+"%");
+        if (StringUtils.isNotBlank(key)) {
+            example.createCriteria().andLike("name", "%" + key + "%");
         }
         List<Tag> tags = tagMapper.selectByExample(example);
-        if(CollectionUtils.isEmpty(tags)){
+        if (CollectionUtils.isEmpty(tags)) {
             throw new FException(ExceptionEnum.TAG_NOT_FOUND);
         }
 
         //对结果进行封装
         PageInfo<Tag> pageInfo = new PageInfo<>(tags);
 
-        return new PageResult<>(pageInfo.getTotal(),tags);
+        return new PageResult<>(pageInfo.getTotal(), tags);
+    }
+
+    public List<Tag> queryByCategoryId(Long id) {
+        Example example = new Example(Tag.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("categoryId", id);
+        List<Tag> tags = tagMapper.selectByExample(example);
+        return tags;
     }
 }

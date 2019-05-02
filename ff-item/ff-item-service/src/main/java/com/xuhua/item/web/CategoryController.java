@@ -26,8 +26,7 @@ public class CategoryController implements CategoryControllerApi {
     private CategoryService categoryService;
 
     /**
-     * 根据商品品牌ID查询品牌
-     *
+     * 根据分类ID查询分类
      * @param id
      * @return
      */
@@ -37,6 +36,10 @@ public class CategoryController implements CategoryControllerApi {
         return ResponseEntity.ok(categoryService.queryCategoryByPid(id));
     }
 
+    /**
+     * 查询所有分类
+     * @return
+     */
     @Override
     @GetMapping("list")
     public ResponseEntity<List<Category>> findAll(){

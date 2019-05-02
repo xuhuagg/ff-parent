@@ -39,7 +39,7 @@ public class TagController implements TagControllerApi {
     @GetMapping("/list/{page}/{size}")
     public ResponseEntity<PageResult<Tag>> queryTagByPage(@PathVariable("page") int page,
                                                           @PathVariable("size") int size,
-                                                          String key
+                                                          @RequestParam("key") String key
     ) {
         return ResponseEntity.ok(tagService.queryTagByPage(page, size, key));
     }

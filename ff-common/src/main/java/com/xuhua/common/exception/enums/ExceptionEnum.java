@@ -17,7 +17,9 @@ public enum ExceptionEnum {
 
     CATEGORY_NOT_FOUND(204, "分类不存在"),
     TAG_NOT_FOUND(204,"标签不存在"),
-
+    BLOG_NOT_FOUND(204,"微文不存在"),
+    BLOG_CREATE_FAILED(500, "微文创建失败"),
+    BLOG_TAG_CREATE_FAILED(500, "微文标签表新建错误"),
     ;
     int value;
     String message;
